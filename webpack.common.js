@@ -1,19 +1,24 @@
 const webpack = require("webpack");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
   /**
    * eval-source-map：调试用
    * cheap-module-eval-source-map:大型项目调试用
-   * cheap-module-source-map:上线用
+   * cheap-module-source-map:上线用，也可不用
    */
-  devtool: "eval-source-map",
+  // devtool: "eval-source-map",
 
-  entry: __dirname + "/src/index.js",
+  //入口文件
+  entry: __dirname + "/src/index.js", 
 
+  //出口文件
   output: {
     path: __dirname + "/dist",
-    filename: "main.js"
+    filename: "main-[hash].js"
   },
 
   /**
@@ -50,33 +55,38 @@ module.exports = {
           {
             test: /\.module\.css/,
             use: [
+              // {
+              //   loader: "style-loader"//把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
+              // },
               {
-                loader: "style-loader"
+                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
               },
               {
                 loader: "css-loader",
                 options: {
-                  modules: {
-                    //css modules 启用
+                  modules: {//css modules 启用
                     localIdentName: "[name]__[local]--[hash:base64:5]"
                   }
                 }
               },
               {
-                loader: "postcss-loader" //默认
+                loader: "postcss-loader"
               }
             ]
           },
           {
             use: [
+              // {
+              //   loader: "style-loader"
+              // },
               {
-                loader: "style-loader"
+                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
               },
               {
                 loader: "css-loader"
               },
               {
-                loader: "postcss-loader" //默认
+                loader: "postcss-loader"
               }
             ]
           }
@@ -118,6 +128,11 @@ module.exports = {
     ]
   },
 
+   /**
+   * Plugins are the backbone of webpack. webpack itself is
+   *  built on the same plugin system that you use in your webpack
+   *  configuration!
+   */
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
@@ -129,8 +144,34 @@ module.exports = {
      * modules while an application is running, without a full
      * reload.
      */
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    //css与js分离
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
+      ignoreOrder: false // Enable to remove warnings about conflicting order
+    }),
+
+    new webpack.ProvidePlugin({
+      //全局变量，不用每个地方都import
+      '$http': 'axios'
+    }),
+    //清除上一次build的文件
+    new CleanWebpackPlugin()
   ],
+
+  resolve: {
+    // 支持缩写
+    extensions: [".js", ".jsx"],
+    // 别名
+    alias: {
+      "@": path.join(__dirname, "src"), //"@表示src目录，即\src"
+      "@source": path.join(__dirname, "src", "source"), //静态资源
+      "@com": path.join(__dirname, "src", "components"), //组件目录
+      "@con": path.join(__dirname, "src", "containers") //containers目录
+    }
+  },
 
   //   本地服务器配置
   devServer: {
@@ -138,7 +179,7 @@ module.exports = {
     host: "localhost",
     port: 8080,
     historyApiFallback: true, //404跳转至index.html
-    proxy: { //代理，可用于跨域，多个后台等情况
+    proxy: {//代理，可用于跨域，多个后台服务器（上线用nginx?）等情况。
       
     }
   }

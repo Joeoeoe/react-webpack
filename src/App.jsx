@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import TemplateCom from "./components/TemplateCom/index.jsx";
+import TemplateCom from "./components/TestCom";
 
 
 class App extends Component {
     constructor(props) {
         super(props);
-        
+        console.log($http)
     }
     //static getDerivedStateFromProps(newProps, Laststate){
         /**
@@ -22,7 +22,7 @@ class App extends Component {
 
     }
     //shouldComponentUpdate(nextProps, nextState){
-//不需要此周期函数不要加入，否则可能引起不刷新！
+    //定义了会返回undefined，不需要此周期函数不要加入周期之中
     //}
     getSnapshotBeforeUpdate(prevProps, prevState){
 
