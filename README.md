@@ -91,7 +91,8 @@ npm run build:运行webpack.prod.js，打包项目
     "webpack": "^4.37.0",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
-    "webpack-merge": "^4.2.1",    
+    "webpack-merge": "^4.2.1", 
+
     //loader
     "html-loader": "^0.5.5",
     "file-loader": "^4.1.0",
@@ -101,6 +102,7 @@ npm run build:运行webpack.prod.js，打包项目
     "babel-loader": "^8.0.6", //使babel搭配webpack
     "react-hot-loader": "^4.12.9",
     "postcss-loader": "^3.0.0", //使PostCSS搭配webpack
+    
     //plugin
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
