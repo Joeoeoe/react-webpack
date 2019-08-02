@@ -169,7 +169,8 @@ module.exports = {
       "@": path.join(__dirname, "src"), //"@表示src目录，即\src"
       "@source": path.join(__dirname, "src", "source"), //静态资源
       "@com": path.join(__dirname, "src", "components"), //组件目录
-      "@con": path.join(__dirname, "src", "containers") //containers目录
+      "@con": path.join(__dirname, "src", "containers"), //containers目录
+      'react-dom': '@hot-loader/react-dom'
     }
   },
 
