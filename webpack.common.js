@@ -47,7 +47,8 @@ module.exports = {
         ]
       },
 
-      //css与css module处理
+      // css与css module处理
+      // 看看webpack-merge有没有其他方法
       {
         test: /\.css$/,
         //匹配.css或.module.css
@@ -159,7 +160,7 @@ module.exports = {
     }),
     //清除上一次build的文件
     new CleanWebpackPlugin()
-  ],
+  ], 
 
   resolve: {
     // 支持缩写

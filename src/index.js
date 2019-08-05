@@ -17,14 +17,12 @@ import App from "./App.jsx";
 
 const render = Component => {
   const app = document.getElementById("App");
-  app
-    ? ReactDOM.render(
+  app? ReactDOM.render(
         <AppContainer>
           <Component />
         </AppContainer>,
         app
-      )
-    : false;
+      ): false;
 };
 render(App);
 
