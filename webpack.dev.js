@@ -61,5 +61,15 @@ module.exports = merge.smart(commonWebpack, {
         ]
       }
     ]
-  }
+  },
+    //   本地服务器配置
+    devServer: {
+      hot: true,
+      host: "localhost",
+      port: 8081,
+      historyApiFallback: true, //404跳转至index.html
+      proxy: {//代理，可用于跨域，多个后台服务器（上线用nginx?）等情况。
+        
+      }
+    }
 });
