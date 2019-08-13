@@ -6,7 +6,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge.smart(commonWebpack, {
   mode: "development",
-
+  output:{
+    publicPath:'/'
+  },
   // 中小项目：eval-source-map
   // 大项目考虑时间成本，用cheap-module-eval-source-map
   devtool: "eval-source-map",
