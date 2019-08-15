@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = merge.smart(commonWebpack, {
   mode: "production",
   //   devtool: "cheap-module-source-map" //可不用
-
+  entry:  __dirname + "/src/index.js",
   module: {
     rules: [
       //css与css module处理

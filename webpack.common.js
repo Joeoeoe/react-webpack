@@ -13,7 +13,8 @@ module.exports = {
   // devtool: "eval-source-map",
 
   //入口文件
-  entry: __dirname + "/src/index.js", 
+  // entry: ['react-hot-loader/patch', __dirname + "/src/index.js"], 
+
 
   //出口文件
   output: {
@@ -48,51 +49,52 @@ module.exports = {
       },
 
       // css与css module处理
-      // 看看webpack-merge有没有其他方法
-      {
-        test: /\.css$/,
-        //匹配.css或.module.css
-        oneOf: [
-          {
-            test: /\.module\.css/,
-            use: [
-              // {
-              //   loader: "style-loader"//把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
-              // },
-              {
-                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
-              },
-              {
-                loader: "css-loader",
-                options: {
-                  modules: {//css modules 启用
-                    localIdentName: "[name]__[local]--[hash:base64:5]"
-                  }
-                }
-              },
-              {
-                loader: "postcss-loader"
-              }
-            ]
-          },
-          {
-            use: [
-              // {
-              //   loader: "style-loader"
-              // },
-              {
-                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
-              },
-              {
-                loader: "css-loader"
-              },
-              {
-                loader: "postcss-loader"
-              }
-            ]
-          }
-        ]
-      },
+      // 配合react-hot-loader，
+      // dev与prod中对CSS处理的不同：1.css module的hash处理 2.样式是否写于js之中，配合react-hot-loader
+      // {
+      //   test: /\.css$/,
+      //   //匹配.css或.module.css
+      //   oneOf: [
+      //     {
+      //       test: /\.module\.css/,
+      //       use: [
+      //         // {
+      //         //   loader: "style-loader"//把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
+      //         // },
+      //         {
+      //           loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+      //         },
+      //         {
+      //           loader: "css-loader",
+      //           options: {
+      //             modules: {//css modules 启用
+      //               localIdentName: "[name]__[local]--[hash:base64:5]"
+      //             }
+      //           }
+      //         },
+      //         {
+      //           loader: "postcss-loader"
+      //         }
+      //       ]
+      //     },
+      //     {
+      //       use: [
+      //         // {
+      //         //   loader: "style-loader"
+      //         // },
+      //         {
+      //           loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+      //         },
+      //         {
+      //           loader: "css-loader"
+      //         },
+      //         {
+      //           loader: "postcss-loader"
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
 
       //图片处理
       {

@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = merge.smart(commonWebpack, {
   mode: "development",
+  entry: ['react-hot-loader/patch', __dirname + "/src/index.js"], 
   output:{
     publicPath:'/'
   },
@@ -22,12 +23,12 @@ module.exports = merge.smart(commonWebpack, {
           {
             test: /\.module\.css/,
             use: [
-              // {
-              //   loader: "style-loader"//把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
-              // },
               {
-                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+                loader: "style-loader"//把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
               },
+              // {
+              //   loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+              // },
               {
                 loader: "css-loader",
                 options: {
@@ -44,12 +45,12 @@ module.exports = merge.smart(commonWebpack, {
           },
           {
             use: [
-              // {
-              //   loader: "style-loader"
-              // },
               {
-                loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+                loader: "style-loader"
               },
+              // {
+              //   loader: MiniCssExtractPlugin.loader //使打包后CSS与js文件分离
+              // },
               {
                 loader: "css-loader"
               },
