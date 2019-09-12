@@ -115,7 +115,7 @@ module.exports = {
 
       //字体处理
       {
-        test: /\.(eot|woff2?|ttf|svg)$/i,
+        test: /\.(eot|woff2?|ttf)$/i,
         use: [
           {
             loader: "url-loader",
