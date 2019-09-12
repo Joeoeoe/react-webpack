@@ -98,7 +98,7 @@ module.exports = {
 
       //图片处理
       {
-        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        test: /\.(png|jpg|jpeg|gif|svg|ico)$/i,
         use: [
           // {
           //   loader: "file-loader"
