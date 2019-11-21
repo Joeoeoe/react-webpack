@@ -8,7 +8,6 @@ import TemplateCom from "./components/TestCom";
 class App extends Component {
     constructor(props) {
         super(props);
-        console.log($http)
     }
     //static getDerivedStateFromProps(newProps, Laststate){
         /**

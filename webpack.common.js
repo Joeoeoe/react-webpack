@@ -158,7 +158,7 @@ module.exports = {
 
     new webpack.ProvidePlugin({
       //全局变量，不用每个地方都import
-      '$http': 'axios'
+      // '$http': 'axios'
     }),
     //清除上一次build的文件
     new CleanWebpackPlugin()
