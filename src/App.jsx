@@ -34,7 +34,7 @@ class App extends Component {
 
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     /**
          * Perform any necessary cleanup in this method,
          * such as invalidating timers, canceling network requests,
