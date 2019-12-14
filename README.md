@@ -1,6 +1,15 @@
 # README
+在使用CRA后感觉其中完善的封装难以扩展，黑盒子无法满足自身的需求，于是从0开始编写了此脚手架，打开这个黑盒子。一方面是满足需要，一方面是对webpack更加全面的学习，以后根据项目需求可以更优雅地解决工程问题。
+
 此配置为个人使用和学习的配置，欢迎大家交流学习，欢迎前辈指正🎉✨  
-<br>
+
+主要功能如下：
+* 开发模式热更新React应用
+* React应用打包
+* ESLint修复
+
+更多细节于**迭代版本**说明。
+
 此文档目录结构如下
 * 文件结构说明
 * 迭代版本
@@ -71,11 +80,18 @@
     * 缓存：打包生成的文件含哈希值，[缓存机制推介绍荐此文](https://mp.weixin.qq.com/s/d2zeGhUptGUGJpB5xHQbOA)  
     * [扩展名简写](https://webpack.js.org/configuration/resolve/#resolveextensions)：例如import XXX from "A/XX"，不需要.js或.jsx，具体见`resolve.extensions`
     * [目录别名](https://webpack.js.org/configuration/resolve/#resolvealias)：举例"@"表示"\src"目录，具体见`resolve.alias`
+
+**重要模块版本**
 ```
-项目重要模块版本
 webpack:4.37.0
 @babel/core:7.5.5
 ```
+
+## v2.0:ESlint及--fix命令添加  2019.12.14
+* ESLint
+    * "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks"]
+    *  --fix命令添加至npm script
+
 # package.json说明
 ## 命令说明
 ```
@@ -121,10 +137,22 @@ npm run build:运行webpack.prod.js，打包项目
     "autoprefixer": "^9.6.1" //根据package.json的browserslist自动添加CSS前缀兼容浏览器
 ```
 
-**React相关**
+**其他**
 ```
     "prop-types": "^15.7.2" //设置React组件prop类型
 ```
+
+
+**ESLint相关**
+```
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+```
+
 
 ###  dependencies
 **React相关**
@@ -148,9 +176,21 @@ npm run build:运行webpack.prod.js，打包项目
 ```
 
 # 参考资料
+
+## webpack
 [思否：入门 Webpack，看这篇就够了](https://segmentfault.com/a/1190000006178770#articleHeader0)  
 [Tutorial: How to set up React, webpack, and Babel 7 from scratch (2019)](https://www.valentinog.com/blog/babel/)  
 [webpack官网](https://webpack.js.org/guides/)  
-[babel官网](https://babeljs.io/docs/en/)  
-[GitHub：PostCSS](https://github.com/postcss/postcss)  
 [掘金：webpack4 的30个步骤打造优化到极致的 react 开发环境，如约而至](https://juejin.im/post/5cfe4b13f265da1bb13f26a8)  
+
+## babel
+[babel官网](https://babeljs.io/docs/en/)  
+
+## css
+[GitHub：PostCSS](https://github.com/postcss/postcss)
+
+## ESLint
+[ESLint Getting Started with ESLint](https://eslint.org/docs/user-guide/getting-started)  
+[npm-eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)  
+[Command Line Interface](https://eslint.org/docs/user-guide/command-line-interface)  
+[ESLint Rules](https://eslint.org/docs/rules/)  

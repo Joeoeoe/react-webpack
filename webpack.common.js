@@ -1,8 +1,8 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const path = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
 
 module.exports = {
   /**
@@ -12,14 +12,14 @@ module.exports = {
    */
   // devtool: "eval-source-map",
 
-  //入口文件
-  // entry: ['react-hot-loader/patch', __dirname + "/src/index.js"], 
+  // 入口文件
+  // entry: ['react-hot-loader/patch', __dirname + "/src/index.js"],
 
 
-  //出口文件
+  // 出口文件
   output: {
-    path: __dirname + "/dist",
-    filename: "main-[hash].js"
+    path: `${__dirname}/dist`,
+    filename: 'main-[hash].js',
   },
 
   /**
@@ -34,18 +34,18 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: 'babel-loader',
+        },
       },
 
-      //html处理
+      // html处理
       {
         test: /\.html$/,
         use: [
           {
-            loader: "html-loader"
-          }
-        ]
+            loader: 'html-loader',
+          },
+        ],
       },
 
       // css与css module处理
@@ -96,7 +96,7 @@ module.exports = {
       //   ]
       // },
 
-      //图片处理
+      // 图片处理
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/i,
         use: [
@@ -104,42 +104,42 @@ module.exports = {
           //   loader: "file-loader"
           // },
           {
-            loader: "url-loader", //需要npm安装file-loader，会自动配合file-loader，但use中不需要写
+            loader: 'url-loader', // 需要npm安装file-loader，会自动配合file-loader，但use中不需要写
             options: {
-              outputPath: "images/",
-              limit: 10 * 1024 //10kb以下转换为base64
-            }
-          }
-        ]
+              outputPath: 'images/',
+              limit: 10 * 1024, // 10kb以下转换为base64
+            },
+          },
+        ],
       },
 
-      //字体处理
+      // 字体处理
       {
         test: /\.(eot|woff2?|ttf)$/i,
         use: [
           {
-            loader: "url-loader",
+            loader: 'url-loader',
             options: {
-              name: "[name]-[hash:5].min.[ext]",
+              name: '[name]-[hash:5].min.[ext]',
               limit: 5000, // fonts file size <= 5KB, use 'base64'; else, output svg file
               // publicPath: "fonts/", //????
-              outputPath: "fonts/"
-            }
-          }
-        ]
-      }
-    ]
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+    ],
   },
 
-   /**
+  /**
    * Plugins are the backbone of webpack. webpack itself is
    *  built on the same plugin system that you use in your webpack
    *  configuration!
    */
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
+      template: './public/index.html',
+      filename: './index.html',
     }),
 
     /**
@@ -149,32 +149,32 @@ module.exports = {
      */
     new webpack.HotModuleReplacementPlugin(),
 
-    //css与js分离
+    // css与js分离
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
-      ignoreOrder: false // Enable to remove warnings about conflicting order
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+      ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
 
     new webpack.ProvidePlugin({
-      //全局变量，不用每个地方都import
+      // 全局变量，不用每个地方都import
       // '$http': 'axios'
     }),
-    //清除上一次build的文件
-    new CleanWebpackPlugin()
-  ], 
+    // 清除上一次build的文件
+    new CleanWebpackPlugin(),
+  ],
 
   resolve: {
     // 支持缩写
-    extensions: [".js", ".jsx"],
+    extensions: ['.js', '.jsx'],
     // 别名
     alias: {
-      "@": path.join(__dirname, "src"), //"@表示src目录，即\src"
-      "@source": path.join(__dirname, "src", "source"), //静态资源
-      "@com": path.join(__dirname, "src", "components"), //组件目录
-      "@con": path.join(__dirname, "src", "containers"), //containers目录
-      'react-dom': '@hot-loader/react-dom'
-    }
+      '@': path.join(__dirname, 'src'), // "@表示src目录，即\src"
+      '@source': path.join(__dirname, 'src', 'source'), // 静态资源
+      '@com': path.join(__dirname, 'src', 'components'), // 组件目录
+      '@con': path.join(__dirname, 'src', 'containers'), // containers目录
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
 
 
