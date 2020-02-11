@@ -97,6 +97,7 @@ webpack:4.37.0
 ```
 npm run start:运行webpack.dev.js，启动开发环境
 npm run build:运行webpack.prod.js，打包项目
+npm run eslint-fix:运行eslint --fix
 ```
 
 ## npm包说明
