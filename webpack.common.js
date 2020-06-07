@@ -33,9 +33,14 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: [
+          {
+            loader: 'babel-loader'
+          },
+          // {
+          //   loader: "source-map-loader"
+          // }
+        ],
       },
 
       // html处理
@@ -128,6 +133,16 @@ module.exports = {
           },
         ],
       },
+
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      }
     ],
   },
 
@@ -166,7 +181,7 @@ module.exports = {
 
   resolve: {
     // 支持缩写
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', ".ts", ".tsx"],
     // 别名
     alias: {
       '@': path.join(__dirname, 'src'), // "@表示src目录，即\src"
@@ -176,6 +191,9 @@ module.exports = {
       'react-dom': '@hot-loader/react-dom',
     },
   },
-
+  //   externals: {
+  //     "react": "React",
+  //     "react-dom": "ReactDOM"
+  // }
 
 };

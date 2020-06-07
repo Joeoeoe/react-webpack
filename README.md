@@ -7,6 +7,7 @@
 * 开发模式热更新React应用
 * React应用打包
 * ESLint修复
+* 添加typescript支持
 
 更多细节于**迭代版本**说明。
 
@@ -38,6 +39,7 @@
 ├─public
 │      index.html    //引用打包后js的html文件
 │      
+│  tsconfig.json //ts文件配置
 └─src
     │  App.css    //应用全局CSS配置
     │  App.jsx    
@@ -91,6 +93,15 @@ webpack:4.37.0
 * ESLint
     * "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb", "airbnb/hooks"]
     *  --fix命令添加至npm script
+
+
+
+
+## v3.0:添加typescript支持  2020.6.7
+* typescript
+    * tsconfig.json: typescript配置文件
+    * TsTestCom使用ts书写，PureTsCom引用会有参数提示，App.jsx引用不会有参数提示，因为App.jsx是使用JavaScript，此处可根据需要修改
+
 
 # package.json说明
 ## 命令说明
@@ -195,3 +206,6 @@ npm run eslint-fix:运行eslint --fix
 [npm-eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)  
 [Command Line Interface](https://eslint.org/docs/user-guide/command-line-interface)  
 [ESLint Rules](https://eslint.org/docs/rules/)  
+
+# typescript
+[TypeScript - React & Webpack](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html)
