@@ -12,7 +12,7 @@ console.log(testBigImg);
 console.log(testSmallImg);
 
 
-class index extends Component {
+class TestCom extends Component {
   constructor(props) {
     super(props);
   }
@@ -64,4 +64,4 @@ class index extends Component {
   }
 }
 
-export default index;
+export default TestCom;

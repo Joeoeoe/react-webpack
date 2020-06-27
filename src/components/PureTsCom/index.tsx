@@ -5,4 +5,4 @@ const PureTsCom = (props:string) => {
     return <TsTestCom compiler="TypseScript" framework="React" />
 }
 
-export default PureTsCom;
+export default PureTsCom; 
