@@ -24,6 +24,7 @@
         "react"
     ],
     "rules": {
-        "linebreak-style": "off"
+        "linebreak-style": "off",
+        "jsx-a11y/alt-text": "off"
     }
 }
