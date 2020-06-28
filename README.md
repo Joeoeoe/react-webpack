@@ -102,6 +102,10 @@ webpack:4.37.0
     * tsconfig.json: typescript配置文件
     * TsTestCom使用ts书写，PureTsCom引用会有参数提示，App.jsx引用不会有参数提示，因为App.jsx是使用JavaScript，此处可根据需要修改
 
+## v3.1:添加typescript对css module声明的支持 2020.6.28
+* typescript
+    * global.d.ts: 使用declare module添加对css文件的声明，理解typescript检查本质
+    * package.json: 添加types字段，指定global.d.ts声明文件
 
 # package.json说明
 ## 命令说明
