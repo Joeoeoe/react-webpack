@@ -35,7 +35,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
           },
           // {
           //   loader: "source-map-loader"
@@ -139,10 +139,10 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "ts-loader"
-          }
-        ]
-      }
+            loader: 'ts-loader',
+          },
+        ],
+      },
     ],
   },
 
