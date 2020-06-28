@@ -36,6 +36,7 @@
             }
         ]
     },
+    // TODO:似乎添加eslint对typescript的支持就不用这个了。。
     "settings": {
         "import/resolver": {
             "node": {
