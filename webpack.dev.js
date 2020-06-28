@@ -40,16 +40,6 @@ module.exports = merge.smart(commonWebpack, {
               {
                 loader: 'postcss-loader',
               },
-              {
-                loader: 'typings-for-css-modules-loader',
-                options: {
-                  modules: true,
-                  namedExport: true,
-                  camelCase: true,
-                  minimize: true,
-                  localIdentName: '[path][name]__[local]--[hash:base64:5]',
-                },
-              },
             ],
           },
           {
