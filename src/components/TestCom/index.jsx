@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './index.css';
 import styles from './index.module.css';
 
-
 const testBigImg = require('@source/img/test-big.jpg');
 const testJson = require('../../source/json/test.json');
 const testSmallImg = require('../../source/img/test-small.png');
@@ -13,9 +12,6 @@ console.log(testSmallImg);
 
 
 class TestCom extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   // source getDerivedStateFromProps(newProps, Laststate){
   /**
