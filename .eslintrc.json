@@ -1,4 +1,5 @@
 {
+    "parser": "@typescript-eslint/parser",
     "env": {
         "browser": true,
         "es6": true
@@ -7,7 +8,9 @@
         "eslint:recommended",
         "plugin:react/recommended",
         "airbnb",
-        "airbnb/hooks"
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -21,9 +24,11 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint"
     ],
     "rules": {
+        "dot-notation":"off",
         "linebreak-style": "off",
         "jsx-a11y/alt-text": "off",
         "import/extensions": [
@@ -34,9 +39,11 @@
                 "ts": "never",
                 "tsx": "never"
             }
-        ]
+        ],
+        "react/jsx-filename-extension":"off",
+        "react/jsx-one-expression-per-line":"off",
+        "react/destructuring-assignment":"off"
     },
-    // TODO:似乎添加eslint对typescript的支持就不用这个了。。
     "settings": {
         "import/resolver": {
             "node": {

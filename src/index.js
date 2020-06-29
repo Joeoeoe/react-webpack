@@ -13,9 +13,9 @@ import 'core-js/stable';
  */
 import 'regenerator-runtime/runtime';
 
-import App from './App.jsx';
+import App from './App';
 
-
+console.log(213);
 const app = document.getElementById('App');
 app ? ReactDOM.render(<App />, app) : false;
 
