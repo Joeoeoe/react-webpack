@@ -31,6 +31,7 @@
         "dot-notation":"off",
         "linebreak-style": "off",
         "jsx-a11y/alt-text": "off",
+        "indent":["error",2, {"VariableDeclarator": "first" }],
         "import/extensions": [
             "error",
             {
@@ -40,6 +41,7 @@
                 "tsx": "never"
             }
         ],
+        "one-var":"off",
         "react/jsx-filename-extension":"off",
         "react/jsx-one-expression-per-line":"off",
         "react/destructuring-assignment":"off"

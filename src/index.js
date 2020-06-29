@@ -19,7 +19,6 @@ console.log(213);
 const app = document.getElementById('App');
 app ? ReactDOM.render(<App />, app) : false;
 
-
 // const render = Component => {
 //   const app = document.getElementById("App");
 //   app? ReactDOM.render(

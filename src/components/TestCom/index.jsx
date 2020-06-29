@@ -10,9 +10,7 @@ console.log(testJson);
 console.log(testBigImg);
 console.log(testSmallImg);
 
-
 class TestCom extends Component {
-
   // source getDerivedStateFromProps(newProps, Laststate){
   /**
          * invoked right before calling the render method,

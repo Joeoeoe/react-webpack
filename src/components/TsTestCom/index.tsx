@@ -5,7 +5,7 @@ interface HelloProps { compiler: string; framework: string; }
 
 const TsTestCom: React.FC<HelloProps> = (props: HelloProps) => {
   const a = 1;
-  const b:number = a;
+  const b: number = a;
   console.log(a, b);
   return (
     <h1 className={styles['test']}>

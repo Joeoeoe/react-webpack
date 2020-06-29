@@ -15,7 +15,6 @@ module.exports = {
   // 入口文件
   // entry: ['react-hot-loader/patch', __dirname + "/src/index.js"],
 
-
   // 出口文件
   output: {
     path: `${__dirname}/dist`,

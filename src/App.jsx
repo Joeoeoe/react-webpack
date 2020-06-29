@@ -8,7 +8,8 @@ import TsTestCom from './components/TsTestCom';
 import PureTsCom from './components/PureTsCom';
 
 function App() {
-  const a = 1;
+  const a = 1,
+        b = 2;
   console.log(1);
   return (
     <div>

@@ -1,8 +1,6 @@
-import * as React from "react";
-import TsTestCom from "../TsTestCom";
+import * as React from 'react';
+import TsTestCom from '../TsTestCom';
 
-const PureTsCom = (props:string) => {
-    return <TsTestCom compiler="TypseScript" framework="React" />
-}
+const PureTsCom = (props: string) => <TsTestCom compiler="TypseScript" framework="React" />;
 
-export default PureTsCom; 
+export default PureTsCom;
