@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { hot } from 'react-hot-loader/root'; // 热替换
 import React from 'react';
 import './App.css';
