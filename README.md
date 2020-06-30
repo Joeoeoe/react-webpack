@@ -136,6 +136,7 @@ npm run eslint-fix:运行eslint --fix
     "babel-loader": "^8.0.6", //使babel搭配webpack
     "react-hot-loader": "^4.12.9",
     "postcss-loader": "^3.0.0", //使PostCSS搭配webpack
+    "less-loader": "^6.1.3", //less支持
     
     //plugin
     "clean-webpack-plugin": "^3.0.0",
@@ -155,12 +156,6 @@ npm run eslint-fix:运行eslint --fix
     "autoprefixer": "^9.6.1" //根据package.json的browserslist自动添加CSS前缀兼容浏览器
 ```
 
-**其他**
-```
-    "prop-types": "^15.7.2" //设置React组件prop类型
-```
-
-
 **ESLint相关**
 ```
     "eslint": "^6.1.0",
@@ -171,6 +166,18 @@ npm run eslint-fix:运行eslint --fix
     "eslint-plugin-react-hooks": "^1.7.0",
 ```
 
+**typescript相关**
+```
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+```
+
+**其他**
+```
+    "prop-types": "^15.7.2" //设置React组件prop类型
+```
 
 ###  dependencies
 **React相关**
