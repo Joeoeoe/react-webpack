@@ -106,6 +106,9 @@ webpack:4.37.0
     * global.d.ts: 使用declare module添加对css文件的声明，理解typescript检查本质
     * package.json: 添加types字段，指定global.d.ts声明文件
 
+## v3.2:添加对less与less module支持
+* less
+    * webpack.dev.js, webpack.prod.js: 在rules的test css中添加less loader即可
 # package.json说明
 ## 命令说明
 ```
