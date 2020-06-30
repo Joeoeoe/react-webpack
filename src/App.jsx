@@ -4,13 +4,12 @@ import React from 'react';
 import './App.css';
 
 import TemplateCom from './components/TestCom';
-import TsTestCom from './components/TsTestCom';
+import TsTestCom from './components/TsCom';
 import PureTsCom from './components/PureTsCom';
 
 function App() {
   const a = 1,
         b = 2;
-  console.log(1);
   return (
     <div>
       <TemplateCom />

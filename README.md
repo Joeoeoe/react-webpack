@@ -49,7 +49,6 @@
     ├─components   //组件目录
     │  └─TemplateCom
     │       
-    ├─containers   //应用模块目录
     └─source   //公用静态资源目录
         ├─font
         │      

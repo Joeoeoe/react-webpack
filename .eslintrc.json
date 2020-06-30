@@ -31,6 +31,8 @@
         "dot-notation":"off",
         "linebreak-style": "off",
         "jsx-a11y/alt-text": "off",
+        "func-names":"off",
+        "one-var":"off",
         "indent":["error",2, {"VariableDeclarator": "first" }],
         "import/extensions": [
             "error",
@@ -38,13 +40,17 @@
                 "jsx": "never",
                 "js": "never",
                 "ts": "never",
-                "tsx": "never"
+                "tsx": "never",
+                "jpg":"never",
+                "png":"never"
             }
         ],
-        "one-var":"off",
+        "@typescript-eslint/no-explicit-any":"off",
+        "react/prop-types":"warn",
         "react/jsx-filename-extension":"off",
         "react/jsx-one-expression-per-line":"off",
-        "react/destructuring-assignment":"off"
+        "react/destructuring-assignment":"off",
+        "react/prefer-stateless-function":"off"
     },
     "settings": {
         "import/resolver": {
