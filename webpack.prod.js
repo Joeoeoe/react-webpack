@@ -32,6 +32,9 @@ module.exports = merge.smart(commonWebpack, {
                 },
               },
               {
+                loader: 'less-loader',
+              },
+              {
                 loader: 'postcss-loader',
               },
             ],
@@ -46,6 +49,9 @@ module.exports = merge.smart(commonWebpack, {
               },
               {
                 loader: 'css-loader',
+              },
+              {
+                loader: 'less-loader',
               },
               {
                 loader: 'postcss-loader',

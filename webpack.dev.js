@@ -15,11 +15,11 @@ module.exports = merge.smart(commonWebpack, {
     rules: [
       // css与css module处理
       {
-        test: /\.css$/,
+        test: /\.(c|le)ss$/,
         // 匹配.css或.module.css
         oneOf: [
           {
-            test: /\.module\.css/,
+            test: /\.module\.(le|c)ss/,
             use: [
               {
                 loader: 'style-loader', // 把<style></style>标签放在DOM中（因为CSS文件以开始没有分离
@@ -37,6 +37,9 @@ module.exports = merge.smart(commonWebpack, {
                 },
               },
               {
+                loader: 'less-loader',
+              },
+              {
                 loader: 'postcss-loader',
               },
             ],
@@ -51,34 +54,14 @@ module.exports = merge.smart(commonWebpack, {
               // },
               {
                 loader: 'css-loader',
-                options: {
-                  modules: {
-                    // css modules 启用
-                    localIdentName: '[path][name]__[local]--[hash:base64:5]',
-                  },
-                },
+              },
+              {
+                loader: 'less-loader',
               },
               {
                 loader: 'postcss-loader',
               },
             ],
-          },
-        ],
-      },
-
-      // less
-      {
-        test: /\.less$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'less-loader',
           },
         ],
       },
