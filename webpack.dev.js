@@ -51,11 +51,34 @@ module.exports = merge.smart(commonWebpack, {
               // },
               {
                 loader: 'css-loader',
+                options: {
+                  modules: {
+                    // css modules 启用
+                    localIdentName: '[path][name]__[local]--[hash:base64:5]',
+                  },
+                },
               },
               {
                 loader: 'postcss-loader',
               },
             ],
+          },
+        ],
+      },
+
+      // less
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'less-loader',
           },
         ],
       },

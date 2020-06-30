@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './index.module.css';
+import styles from './index.less';
 
+console.log(styles);
 interface HelloProps { compiler: string; framework: string; }
 
 const TsCom: React.FC<HelloProps> = function (props) {
