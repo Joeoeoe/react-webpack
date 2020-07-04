@@ -28,6 +28,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "quotes":"off",
         "dot-notation":"off",
         "linebreak-style": "off",
         "jsx-a11y/alt-text": "off",
