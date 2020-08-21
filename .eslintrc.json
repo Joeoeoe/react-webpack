@@ -1,64 +1,42 @@
 {
-    "parser": "@typescript-eslint/parser",
-    "env": {
-        "browser": true,
-        "es6": true
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "airbnb",
-        "airbnb/hooks",
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import", "@typescript-eslint"],
+  "rules": {
+    "jsx-a11y/alt-text": "off",
+    "func-names": "off",
+    "import/extensions": [
+      "error",
+      {
+        "jsx": "never",
+        "js": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "quotes":"off",
-        "dot-notation":"off",
-        "linebreak-style": "off",
-        "jsx-a11y/alt-text": "off",
-        "func-names":"off",
-        "one-var":"off",
-        "indent":["error",2, {"VariableDeclarator": "first" }],
-        "import/extensions": [
-            "error",
-            {
-                "jsx": "never",
-                "js": "never",
-                "ts": "never",
-                "tsx": "never",
-                "jpg":"never",
-                "png":"never"
-            }
-        ],
-        "@typescript-eslint/no-explicit-any":"off",
-        "react/prop-types":"warn",
-        "react/jsx-filename-extension":"off",
-        "react/jsx-one-expression-per-line":"off",
-        "react/destructuring-assignment":"off",
-        "react/prefer-stateless-function":"off"
-    },
-    "settings": {
-        "import/resolver": {
-            "webpack":{
-                "config":"webpack.common.js"
-            }
-        }
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.common.js"
+      }
     }
+  }
 }

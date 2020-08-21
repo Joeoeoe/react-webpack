@@ -1,5 +1,5 @@
-import * as React from 'react';
-import TsCom from '../TsCom'; // 测试ts引用路径检索
+import * as React from 'react'
+import TsCom from '../TsCom' // 测试ts引用路径检索
 
 const PureTsCom: React.FC<any> = function () {
   return (
@@ -7,7 +7,7 @@ const PureTsCom: React.FC<any> = function () {
       <h1>Ts引用及路径检索测试</h1>
       <TsCom compiler="TypseScript" framework="React" />
     </div>
-  );
-};
+  )
+}
 
-export default PureTsCom;
+export default PureTsCom
