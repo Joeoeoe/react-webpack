@@ -1,6 +1,6 @@
-const merge = require('webpack-merge')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const commonWebpack = require('./webpack.common')
+const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const commonWebpack = require('./webpack.common');
 
 module.exports = merge.smart(commonWebpack, {
   mode: 'development',
@@ -77,4 +77,4 @@ module.exports = merge.smart(commonWebpack, {
       // 代理，可用于跨域，多个后台服务器（上线用nginx?）等情况。
     },
   },
-})
+});

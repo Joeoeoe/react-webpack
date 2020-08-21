@@ -1,6 +1,6 @@
-const merge = require('webpack-merge')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const commonWebpack = require('./webpack.common')
+const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const commonWebpack = require('./webpack.common');
 
 module.exports = merge.smart(commonWebpack, {
   mode: 'production',
@@ -62,4 +62,4 @@ module.exports = merge.smart(commonWebpack, {
       },
     ],
   },
-})
+});

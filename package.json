@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "fix": "npx eslint ./ --fix --ext .js,.jsx,.ts,.tsx"
+    "fix": "npx eslint ./ --fix --ext .js,.jsx,.ts,.tsx",
+    "format": "npx prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,7 @@
     "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^4.3.0",
@@ -41,6 +43,7 @@
     "mini-css-extract-plugin": "^0.8.2",
     "postcss-loader": "^3.0.0",
     "prettier": "2.0.5",
+    "prettier-eslint": "^11.0.0",
     "prop-types": "^15.7.2",
     "react-hot-loader": "^4.12.21",
     "source-map-loader": "^1.0.0",
