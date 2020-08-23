@@ -30,6 +30,7 @@ const TestCom: React.FC<any> = function () {
         }}>
         click me
       </button>
+      <span>{number}</span>
       <hr />
 
       <h1>JSON文件引入测试</h1>
