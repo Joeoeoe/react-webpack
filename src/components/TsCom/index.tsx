@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './index.module.less';
 
 interface HelloProps {
@@ -9,10 +9,13 @@ interface HelloProps {
 const TsCom: React.FC<HelloProps> = function (props) {
   const a = 1;
   const b: number = a;
-  console.log(a, b);
+  const [number, setNumber] = useState(0);
   return (
     <div>
       <h1>TS测试</h1>
+      <p>热重载测试</p>
+      <button onClick={() => setNumber(number + 1)}>click me</button>
+      <p>number:{number}</p>
       <p className={styles['test']}>
         Hello from {props.compiler} and {props.framework}!
       </p>
